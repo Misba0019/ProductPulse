@@ -61,3 +61,5 @@ The app will be available at [http://localhost:3000/products](http://localhost:3
 - **Edit or delete a product:**  
   Click a product name, then use the "Edit" or "Delete" options.
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
