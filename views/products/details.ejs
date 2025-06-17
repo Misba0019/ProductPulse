@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(14, 143, 175);
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            color: rgb(1, 53, 58);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <h1><i><%= product.name %></i></h1>
+        <hr>
+        <img src="<%= product.img %>" alt="<%= product.name %>">
+        <ul>
+            <li><b>Price:</b> $<%= product.price %>
+            </li>
+            <li><b>Category:</b> <a href="/products?category=<%= product.category %>">
+                    <%= product.category %>
+                </a> </li>
+            <li><b>Id:</b>
+                <%= product._id %>
+            </li>
+            <li><b>Details:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem est officiis animi
+                consequatur, doloribus nemo similique magni libero veniam suscipit optio dolor doloremque non? Distinctio fugit
+                eum quis quidem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quisquam sapiente voluptates omnis
+                consequuntur iusto aspernatur commodi, eligendi labore similique. Iure libero nulla officia, maxime excepturi
+                sapiente voluptate est Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia mollitia vel
+                quos voluptate id tempore alias odio, rem, et aperiam eius neque? Aliquid illum id totam, aperiam perferendis
+                ad.</li>
+        </ul>
+    </div>
+
+    <div>
+    <a href="/products">All Products</a>
+    <br>
+    <a href="/products/<%= product._id%>/edit">Edit</a>
+    <br>
+    <form action="/products/<%=product._id%>?_method=DELETE" method="post">
+        <button>Delete</button>
+    </form>
+    </div>
+    
+</body>
+</html>

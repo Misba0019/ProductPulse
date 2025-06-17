@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Factory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(14, 143, 175);
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+        table {
+            width: 60%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 16px;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(1, 53, 58);
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e0f7fa;
+        }
+        /* Table product links */
+        table a {
+            color: rgb(1, 53, 58);
+            text-decoration: none;
+        }
+        /* Action links below table */
+        .action-link {
+            display: inline-block;
+            margin: 10px 10px 8px 10px;
+            padding: 8px 20px;
+            background: rgb(1, 53, 58);
+            color: white;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        .action-link:hover {
+            background: rgb(137, 201, 216);
+            color: rgb(1, 53, 58);
+        }
+        .actions {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> <i><%= category %> products!</i> </h1>
+
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> Price </th>
+        </tr>
+
+        <% for (let product of products) { %>
+            <tr>
+                <td><b> <a href="/products/<%= product._id %>"><%= product.name %> </a> </b></td>
+                <td><i><%= product.price %></i> </td>
+            </tr>
+        <% } %>
+    </table>
+
+    <div class="actions">
+    <a class="action-link" href="/products/new">Add Product</a>
+    <%if(category !== 'All'){ %>
+        <a class="action-link" href="/products">All Products</a>
+    <% } %>
+    </div>
+
+</body>
+</html>
