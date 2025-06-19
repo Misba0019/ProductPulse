@@ -61,5 +61,18 @@ The app will be available at [http://localhost:3000/products](http://localhost:3
 - **Edit or delete a product:**  
   Click a product name, then use the "Edit" or "Delete" options.
 
+## Project Structure
+
+- `index.js` – Main Express application; sets up routes, connects to MongoDB, and starts the server.
+- `models/product.js` – Defines the Product schema and model using Mongoose.
+- `seeds.js` – Script to populate the database with sample product data.
+- `views/products/index.ejs` – Displays the list of products.
+- `views/products/details.ejs` – Shows details for a single product.
+- `views/products/edit.ejs` – Form to edit an existing product.
+- `views/products/new.ejs` – Form to add a new product.
+
+## Feedback ⭐️
+If you like this project, consider starring the repo to show your support!
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
