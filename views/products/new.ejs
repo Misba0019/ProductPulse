@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Make New Product</h1>
+    <!-- New product form -->
     <form action="/products" method="post">
-
         <label for="name">Product Name:</label>
             <input type="text" name="name" id="name" placeholder="Name">
         
@@ -18,14 +18,16 @@
         <label for="image">Product Image:</label>
             <input type="text" name="img" id="image" placeholder="Product Image URL">
         
+        <!-- Category dropdown -->
         <select name="category">
             <% for(let category of categories) { %>
                 <option value="<%= category %>"><%= category %></option>
             <% } %>
-            </select>
+        </select>
             <button>Add Product</button>
     </form>
     
+    <!-- Cancel and go back to products list -->
     <a href="/products">Cancel</a>
 </body>
 </html>

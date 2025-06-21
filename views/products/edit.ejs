@@ -8,7 +8,9 @@
 </head>
 
 <body>
+
     <h1>Edit Product</h1>
+    <!-- Edit product form -->
     <form action="/products/<%= product._id %>?_method=PUT" method="post">
         <label for="name">Product Name:</label>
         <input type="text" name="name" id="name" placeholder="Name" value="<%= product.name %>">
@@ -20,6 +22,7 @@
         <input type="text" name="img" id="image" placeholder="Product Image URL" value="<%= product.img %>">
 
         <label for="category">Select Category:</label>
+        <!-- Category dropdown with current category selected -->
         <select name="category" id="category">
             <% for(let category of categories) { %>
                 <option value="<%= category %>" <%= product.category === category ? 'selected' : '' %>><%= category %>
@@ -28,7 +31,8 @@
         </select>
         <button>Edit</button>
     </form>
+    <!-- Cancel and go back to product details -->
     <a href="/products/<%= product._id %>">Cancel</a>
-</body>
 
+</body>
 </html>

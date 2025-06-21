@@ -10,55 +10,65 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand').then(() => {
     console.log(err)
 });
 
-// Seeded our database separate from our app
-
-// const p = new Product({
-//     name: 'Ruby Grapefruit',
-//     price: 1.99,
-//     category: 'fruit'
-// });
-// p.save().then(p => {
-//     console.log(p);
-// }).catch(e => {
-//     console.log(e);
-// });
-
-// This is for seeding our database
+// Sample products to seed the database
 const seedProducts = [
     {
-        name: 'Fairy Eggplant',
-        price: 1.00,
-        category: 'vegetable',
-        img: 'https://plus.unsplash.com/premium_photo-1693266782255-10ae7abbd98d?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
-    {
-        name: 'Organic Goddess Melon',
-        price: 4.99,
+        name: 'Golden Apple',
+        price: 2.25,
         category: 'fruit',
-        img: 'https://plus.unsplash.com/premium_photo-1705932430293-a1d21fab094a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        img: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80'
     },
     {
-        name: 'Organic Mini Seedless Watermelon',
-        price: 3.99,
-        category: 'fruit',
-        img: 'https://plus.unsplash.com/premium_photo-1724256227284-0e987ccd3f5e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
-    {
-        name: 'Organic Celery',
-        price: 1.5,
+        name: 'Fresh Broccoli',
+        price: 1.75,
         category: 'vegetable',
-        img: 'https://plus.unsplash.com/premium_photo-1723485646947-c73bf14ccdb7?q=80&w=988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        img: 'https://images.unsplash.com/photo-1518976024611-4886d7a7d57b?auto=format&fit=crop&w=800&q=80'
     },
     {
-        name: 'Chocolate Whole Milk',
-        price: 2.69,
+        name: 'Strawberry Yogurt',
+        price: 3.10,
         category: 'dairy',
-        img: 'https://images.unsplash.com/photo-1616269267068-a94048945ded?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Purple Carrot',
+        price: 1.20,
+        category: 'vegetable',
+        img: 'https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Mango Delight',
+        price: 2.99,
+        category: 'fruit',
+        img: 'https://images.unsplash.com/photo-1504674900247-ec6b0b4782d2?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Goat Cheese',
+        price: 4.50,
+        category: 'dairy',
+        img: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Spinach Leaves',
+        price: 1.30,
+        category: 'vegetable',
+        img: 'https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Greek Yogurt',
+        price: 2.80,
+        category: 'dairy',
+        img: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+        name: 'Red Bell Pepper',
+        price: 2.40,
+        category: 'vegetable',
+        img: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80'
     }
-]
+];
 
-// Inserting all the seed products into the database
-// This is a one time thing, so we don't need to run this again
+// Insert seed products into the database
 Product.insertMany(seedProducts)
 .then(res => {
     console.log(res);
@@ -67,8 +77,5 @@ Product.insertMany(seedProducts)
     console.log(e);
 });
 
-// The above code is for seeding our database. We have created a list of products and then we are inserting them into our database.
-// We are using the insertMany method to insert all the products at once.
-// We are also using promises to handle the success and error cases. If the insertion is successful, we will log the response to the console.
-// If there is an error, we will log the error to the console.
-// We only need to run this code once to seed our database. We don't need to run this code every time we start our server. We can comment out this code once we have seeded our database.    
+// Note: Run this script ONCE to seed your database.
+// You do not need to run this every time you start your server.

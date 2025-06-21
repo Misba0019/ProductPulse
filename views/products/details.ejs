@@ -36,6 +36,7 @@
         </style>
 </head>
 <body>
+
     <div>
         <h1><i><%= product.name %></i></h1>
         <hr>
@@ -43,13 +44,15 @@
         <ul>
             <li><b>Price:</b> $<%= product.price %>
             </li>
+            <!-- Link to filter by this category -->
             <li><b>Category:</b> <a href="/products?category=<%= product.category %>">
                     <%= product.category %>
                 </a> </li>
             <li><b>Id:</b>
                 <%= product._id %>
             </li>
-            <li><b>Details:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem est officiis animi
+            <li><b>Details:</b>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem est officiis animi
                 consequatur, doloribus nemo similique magni libero veniam suscipit optio dolor doloremque non? Distinctio fugit
                 eum quis quidem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quisquam sapiente voluptates omnis
                 consequuntur iusto aspernatur commodi, eligendi labore similique. Iure libero nulla officia, maxime excepturi
@@ -60,13 +63,14 @@
     </div>
 
     <div>
-    <a href="/products">All Products</a>
-    <br>
-    <a href="/products/<%= product._id%>/edit">Edit</a>
-    <br>
-    <form action="/products/<%=product._id%>?_method=DELETE" method="post">
-        <button>Delete</button>
-    </form>
+        <!-- Navigation and actions -->
+        <a href="/products">All Products</a>
+        <br>
+        <a href="/products/<%= product._id%>/edit">Edit</a>
+        <br>
+        <form action="/products/<%=product._id%>?_method=DELETE" method="post">
+            <button>Delete</button>
+        </form>
     </div>
     
 </body>
