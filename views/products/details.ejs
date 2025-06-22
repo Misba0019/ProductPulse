@@ -12,15 +12,41 @@
         }
         h1 {
             text-align: center;
+            color: rgb(1, 53, 58);
+            background: #aad7e3;
+            padding: 18px 0;
+            margin: 32px auto 24px auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            font-size: 2.2em;
+            letter-spacing: 1px;
+            width: 70%;
         }
-        img {
+        .details-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 32px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        .details-img {
+            flex-shrink: 0;
+        }
+        .details-img img {
             display: block;
             margin: 0 auto;
-            max-width: 100%;
-            height: auto;
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .details-info {
+            margin-top: 0;
         }
         ul {
             list-style-type: none;
+            margin: 0;
             padding: 0;
         }
         li {
@@ -33,42 +59,71 @@
         a:hover {
             text-decoration: underline;
         }
+        .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .actions a, .actions button {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 8px 18px;
+            background: rgb(1, 53, 58);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .actions a:hover, .actions button:hover {
+            background: rgb(137, 201, 216);
+            color: rgb(1, 53, 58);
+        }
+        @media (max-width: 800px) {
+            .details-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .details-img img {
+                width: 100%;
+                height: auto;
+            }
+        }
         </style>
 </head>
 <body>
 
     <div>
         <h1><i><%= product.name %></i></h1>
-        <hr>
-        <img src="<%= product.img %>" alt="<%= product.name %>">
-        <ul>
-            <li><b>Price:</b> $<%= product.price %>
-            </li>
-            <!-- Link to filter by this category -->
-            <li><b>Category:</b> <a href="/products?category=<%= product.category %>">
-                    <%= product.category %>
-                </a> </li>
-            <li><b>Id:</b>
-                <%= product._id %>
-            </li>
-            <li><b>Details:</b>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem est officiis animi
-                consequatur, doloribus nemo similique magni libero veniam suscipit optio dolor doloremque non? Distinctio fugit
-                eum quis quidem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quisquam sapiente voluptates omnis
-                consequuntur iusto aspernatur commodi, eligendi labore similique. Iure libero nulla officia, maxime excepturi
-                sapiente voluptate est Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita officia mollitia vel
-                quos voluptate id tempore alias odio, rem, et aperiam eius neque? Aliquid illum id totam, aperiam perferendis
-                ad.</li>
-        </ul>
+
+        <div class="details-wrapper">
+            <div class="details-img">
+                <img src="<%= product.img %>" alt="<%= product.name %>">
+            </div>
+
+            <div class="details-info">
+                <ul>
+                    <li><b>Price:</b> $<%= product.price %></li>
+                    <!-- Link to filter by this category -->
+                    <li><b>Category:</b> <a href="/products?category=<%= product.category %>"><%= product.category %></a> </li>
+                    <li><b>Id:</b><%= product._id %></li>
+                    <li><b>Details:</b>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem est officiis animi consequatur, doloribus nemo
+                        similique magni libero veniam suscipit optio dolor doloremque non? Distinctio fugit eum quis quidem?Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit.</li>
+                </ul>
+            </div>
+
+        </div>
+
     </div>
 
-    <div>
+    <div class="actions">
         <!-- Navigation and actions -->
         <a href="/products">All Products</a>
-        <br>
         <a href="/products/<%= product._id%>/edit">Edit</a>
-        <br>
-        <form action="/products/<%=product._id%>?_method=DELETE" method="post">
+        <form action="/products/<%=product._id%>?_method=DELETE" style="display:inline;" method="post">
             <button>Delete</button>
         </form>
     </div>
