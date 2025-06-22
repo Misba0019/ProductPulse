@@ -5,6 +5,17 @@ This project allows you to create, read, update, and delete products, and filter
 
 ---
 
+## Features
+
+- View all products in a table
+- Filter products by category
+- Add new products
+- Edit existing products
+- Delete products
+- Clean, responsive UI with EJS and custom CSS
+
+---
+
 ## Technologies Used
 
 - Node.js
