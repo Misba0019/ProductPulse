@@ -16,6 +16,26 @@ This project allows you to create, read, update, and delete products, and filter
 
 ---
 
+## Screenshots
+
+### All Products
+![All Products](assets/all-products.png)
+
+### Filtered by Category
+![Category Filter](assets/fruit-category.png)
+
+### Product Details
+![Product Details](assets/product-details.png)
+
+### Add Product
+![Add Product](assets/add-product.png)
+
+### Edit Product
+![Edit Product](assets/edit-product.png)
+
+
+---
+
 ## Technologies Used
 
 - Node.js
