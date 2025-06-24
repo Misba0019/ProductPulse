@@ -1,4 +1,4 @@
-# Mongoose Express App
+# ProductPulse
 
 A simple CRUD web application demonstrating the basics of using **Mongoose** with **MongoDB** and **Express** in **Node.js**.  
 This project allows you to create, read, update, and delete products, and filter them by category, all with a clean EJS-based UI.
