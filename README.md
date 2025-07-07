@@ -33,7 +33,6 @@ This project allows you to create, read, update, and delete products, and filter
 ### Edit Product
 ![Edit Product](assets/edit-product.png)
 
-
 ---
 
 ## Technologies Used
@@ -43,6 +42,7 @@ This project allows you to create, read, update, and delete products, and filter
 - MongoDB
 - Mongoose
 - EJS
+- Bootstrap
 
 ---
 
