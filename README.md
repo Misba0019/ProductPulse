@@ -1,4 +1,4 @@
-# ProductPulse
+# 🛒 ProductPulse
 
 A simple CRUD web application demonstrating the basics of using **Mongoose** with **MongoDB** and **Express** in **Node.js**.  
 This project allows you to create, read, update, and delete products, and filter them by category, all with a clean EJS-based UI.
@@ -13,6 +13,16 @@ This project allows you to create, read, update, and delete products, and filter
 - Edit existing products
 - Delete products
 - Clean, responsive UI with EJS and custom CSS
+
+---
+
+## Routes & App Flow
+
+- **GET** `/products` – View all products
+- **GET** `/products/new` – Open the form to add a new product
+- **GET** `/products/:id` – View product details
+- **GET** `/products/:id/edit` – Edit an existing product
+- **DELETE** `/products/:id` – Delete a product (via form submission)
 
 ---
 
@@ -65,7 +75,7 @@ mongosh
 
 ### 3. Seed the Database (Optional)
 
-To populate your DataBase with sample products, run:
+To populate your database with sample products, run:
 
 ```bash
 node seeds.js
@@ -79,30 +89,17 @@ nodemon index.js
 
 The app will be available at [http://localhost:3000/products](http://localhost:3000/products).
 
----
-
-## Usage
-
-- **View all products:**  
-  Go to `/products` to see the product list.
-- **Filter by category:**  
-  Use the category filter as needed.
-- **Add a product:**  
-  Click "Add Product" and fill out the form.
-- **Edit or delete a product:**  
-  Click a product name, then use the "Edit" or "Delete" options.
-
 --- 
 
 ## Project Structure
 
-- `index.js` – Main Express application; sets up routes, connects to MongoDB, and starts the server.
-- `models/product.js` – Defines the Product schema and model using Mongoose.
-- `seeds.js` – Script to populate the database with sample product data.
+- `index.js` – Main Express app; sets up routes, connects to MongoDB, and starts the server.
+- `models/product.js` – Mongoose schema and model definition
+- `seeds.js` – Script to seed the database with sample products
 - `views/products/index.ejs` – Displays the list of products.
-- `views/products/details.ejs` – Shows details for a single product.
+- `views/products/details.ejs` – Shows individual product details
 - `views/products/edit.ejs` – Form to edit an existing product.
-- `views/products/new.ejs` – Form to add a new product.
+- `views/products/new.ejs` – Form to add a product.
 
 --- 
 
