@@ -44,6 +44,10 @@ This project allows you to create, read, update, and delete products, and filter
 ### Edit Product
 ![Edit Product](assets/edit-product.png)
 
+### Product Not Found (Error Handling)
+Attempting to access a valid but non-existent product ID:
+![Error-404](assets/404-product-not-found.png)
+
 ---
 
 ## Technologies Used
