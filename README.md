@@ -13,6 +13,7 @@ This project allows you to create, read, update, and delete products, and filter
 - Edit existing products
 - Delete products
 - Clean, responsive UI with EJS and custom CSS
+- Robust error handling for validation errors, invalid ObjectIds, and missing resources  
 
 ---
 
@@ -94,12 +95,15 @@ The app will be available at [http://localhost:3000/products](http://localhost:3
 ## Project Structure
 
 - `index.js` – Main Express app; sets up routes, connects to MongoDB, and starts the server.
-- `models/product.js` – Mongoose schema and model definition
-- `seeds.js` – Script to seed the database with sample products
+- `models/product.js` – Mongoose schema and model definition.
+- `seeds.js` – Script to seed the database with sample products.
 - `views/products/index.ejs` – Displays the list of products.
-- `views/products/details.ejs` – Shows individual product details
+- `views/products/details.ejs` – Shows individual product details.
 - `views/products/edit.ejs` – Form to edit an existing product.
 - `views/products/new.ejs` – Form to add a product.
+- `wrapAsync.js` – Utility to catch async errors cleanly.
+- `appError.js` – Custom error class for structured error responses.
+- `validateObjId.js` – Middleware to handle invalid ObjectId formats.
 
 --- 
 
