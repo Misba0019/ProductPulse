@@ -12,7 +12,7 @@ This project allows you to create, read, update, and delete products, and filter
 - Add new products
 - Edit existing products
 - Delete products
-- Clean, responsive UI with EJS and custom CSS
+- Clean, responsive UI with EJS and Bootstrap 5
 - Robust error handling for validation errors, invalid ObjectIds, and missing resources  
 
 ---
