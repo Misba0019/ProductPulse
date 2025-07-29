@@ -1,6 +1,7 @@
 <%- include('../partials/header', { title: 'Edit Product' }) %>
 
-        <h1 class="display-1">Edit Product</h1>
+    <div class="card shadow-sm border-0 bg-white p-4">
+        <h1 class="display-5 fw-semibold mb-4 mt-0">Edit Product</h1>
         <!-- Edit product form -->
         <form action="/products/<%= product._id %>?_method=PUT" method="post">
             <div class="mb-3">
@@ -36,5 +37,6 @@
             <button class="btn btn-success">Update Product</button>
             <a href="/products/<%= product._id %>" class="btn btn-dark ms-2">Cancel</a>
         </form>
+    </div>
 
 <%- include('../partials/footer') %>

@@ -1,6 +1,7 @@
 <%- include('../partials/header', { title: 'Add Product' }) %>
 
-        <h1 class="display-1">Make New Product</h1>
+    <div class="card shadow-sm border-0 bg-white p-4">
+        <h1 class="display-5 fw-semibold mb-4 mt-0">Make New Product</h1>
         <!-- New product form -->
         <form action="/products" method="post">
             <div class="mb-3">
@@ -32,5 +33,6 @@
             <button class="btn btn-success">Add Product</button>
             <a href="/products" class="btn btn-dark ms-2">Cancel</a>
         </form>
+    </div>
 
 <%- include('../partials/footer') %>
