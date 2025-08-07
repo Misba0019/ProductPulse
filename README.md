@@ -1,7 +1,6 @@
 # 🛒 ProductPulse
 
-A simple CRUD web application demonstrating the basics of using **Mongoose** with **MongoDB** and **Express** in **Node.js**.  
-This project allows you to create, read, update, and delete products, and filter them by category, all with a clean EJS-based UI.
+> A full-stack, catalog-style CRUD application for managing and browsing products by category — built with Node.js, Express, MongoDB, Mongoose, and EJS.
 
 ---
 
@@ -27,7 +26,7 @@ This project allows you to create, read, update, and delete products, and filter
 
 ---
 
-## Screenshots
+## Preview
 
 ### All Products
 ![All Products](assets/all-products.png)
@@ -64,30 +63,23 @@ Attempting to access a valid but non-existent product ID:
 ## Getting Started
 
 ### 1. Install Dependencies
-
 ```bash
 npm install
 ```
 
-### 2. Start MongoDB
-
-Make sure your MongoDB server is running locally.  
-If you have MongoDB installed, you can start it with:
-
+### 2. Start MongoDB (if not running automatically)
+MongoDB must be running for the app to work. If it’s not running automatically, start it manually:
 ```bash
-mongosh
+mongod
 ```
 
 ### 3. Seed the Database (Optional)
-
 To populate your database with sample products, run:
-
 ```bash
 node seeds.js
 ```
 
 ### 4. Start the Server
-
 ```bash
 nodemon index.js
 ```
