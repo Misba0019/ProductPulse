@@ -113,7 +113,7 @@ app.use((err, req, res, next) => {
     const status = err.status || 500;
     const message = err.msg || 'Something went wrong';
 
-    res.status(status).send(`<h1>Error ${status}</h1><p>${message}</p>`);
+    res.status(status).render('error', {status, message});
 });
 
 
