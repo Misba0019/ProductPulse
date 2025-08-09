@@ -1,0 +1,21 @@
+<%- include('partials/header', { title: 'Error' }) %>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="bg-danger bg-opacity-10 border border-danger border-opacity-25 rounded-4 shadow-lg p-4 text-center" style="max-width: 550px; width: 100%;">
+
+        <!-- Title -->
+        <h1 class="fw-bold text-danger mb-2">
+            Error <%= status %>
+        </h1>
+
+        <!-- Message -->
+        <p class="text-muted mb-4 fs-5">
+            <%= message %>
+        </p>
+
+        <!-- Button -->
+        <a href="/products" class="btn btn-danger px-4 rounded-pill shadow-sm">Go to Products</a>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
