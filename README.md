@@ -1,6 +1,6 @@
 # 🛒 ProductPulse
 
-> A full-stack, catalog-style CRUD application for managing and browsing products by category — built with Node.js, Express, MongoDB, Mongoose, and EJS.
+A full-stack, catalog-style CRUD application for managing and browsing products by category — built with Node.js, Express, MongoDB, Mongoose, and EJS.
 
 ---
 
@@ -12,7 +12,7 @@
 - Edit existing products
 - Delete products
 - Clean, responsive UI with EJS and Bootstrap 5
-- Robust error handling for validation errors, invalid ObjectIds, and missing resources  
+- Robust error handling for validation errors, invalid ObjectIds, and missing resources — all errors are shown on a custom, responsive error page for a better user experience.
 
 ---
 
@@ -23,6 +23,7 @@
 - **GET** `/products/:id` – View product details
 - **GET** `/products/:id/edit` – Edit an existing product
 - **DELETE** `/products/:id` – Delete a product (via form submission)
+- **ERROR** `/products/:invalidID` – Displays a user-friendly error message for invalid requests or missing resources
 
 ---
 
@@ -100,6 +101,7 @@ The app will be available at [http://localhost:3000/products](http://localhost:3
 - `wrapAsync.js` – Utility to catch async errors cleanly.
 - `appError.js` – Custom error class for structured error responses.
 - `validateObjId.js` – Middleware to handle invalid ObjectId formats.
+- `views/error.ejs` – Styled error page for displaying validation errors, invalid ObjectIds, etc.
 
 --- 
 
