@@ -14,7 +14,9 @@
                         <!-- Product Details -->
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item fs-5"><b>Price:</b>$<%= product.price %>
+                                <li class="list-group-item fs-5">
+                                    <b>Price:</b>
+                                    $<%= product.price %>
                                 </li>
                                 <li class="list-group-item fs-5">
                                     <b>Category:</b>
@@ -22,14 +24,18 @@
                                         <span class="badge bg-success text-capitalize px-3 py-2"><%= product.category %></span>
                                     </a>
                                 </li>
-                                <li class="list-group-item fs-5"><b>Details:</b>
+                                <li class="list-group-item fs-5">
+                                    <b>Details:</b>
                                     <p class="mt-2 mb-0 text-muted">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quidem est officiis animi consequat doloribus nemo similique magni libero veniam suscipit optio dolor doloremque non? Distinctio fugit eum quis quidem?Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     </p>
                                 </li>
                             </ul>
                         </div>
-
+                    </div>
+                    <!-- Card Footer for timestamps -->
+                    <div class="card-footer text-muted small">
+                        Added on: <%= createdAt %> | Last updated: <%= updatedAt %>
                     </div>
                 </div>
 

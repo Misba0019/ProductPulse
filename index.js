@@ -58,7 +58,21 @@ app.get('/products/:id', validateObjectId, wrapAsync(async (req, res) => {
     if (!product) {
         throw new AppError('Product Not Found', 404);
     }
-    res.render('products/details', { product });
+    let createdAt = "N/A";
+    if (product.createdAt) {
+        createdAt = new Date(product.createdAt).toLocaleString('en-IN', {
+            dateStyle: 'medium',
+            timeStyle: 'short'
+        });
+    }
+    let updatedAt = "N/A";
+    if (product.updatedAt) {
+        updatedAt = new Date(product.updatedAt).toLocaleString('en-IN', {
+            dateStyle: 'medium',
+            timeStyle: 'short'
+        });
+    }
+    res.render('products/details', { product, createdAt, updatedAt});
 }));
 
 // Delete a product
@@ -115,7 +129,6 @@ app.use((err, req, res, next) => {
 
     res.status(status).render('error', {status, message});
 });
-
 
 // Start the server
 app.listen(3000, () => {

@@ -19,7 +19,9 @@ const productSchema = new mongoose.Schema({
     img: {
         type: String
     }
-});
+},
+    { timestamps: true }
+);
 
 // Create and export the Product model
 const Product = mongoose.model('Product', productSchema);
