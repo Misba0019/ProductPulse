@@ -11,6 +11,7 @@ A full-stack, catalog-style CRUD application for managing and browsing products 
 - Add new products
 - Edit existing products
 - Delete products
+- Product details page now shows **creation and last updated timestamps**
 - Clean, responsive UI with EJS and Bootstrap 5
 - Robust error handling for validation errors, invalid ObjectIds, and missing resources — all errors are shown on a custom, responsive error page for a better user experience.
 
