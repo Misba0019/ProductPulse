@@ -92,7 +92,8 @@ The app will be available at [http://localhost:3000/products](http://localhost:3
 
 ## Project Structure
 
-- `index.js` – Main Express app; sets up routes, connects to MongoDB, and starts the server.
+- `index.js` – Main Express app; sets up middleware, connects to MongoDB, mounts routers, and starts the server.
+- `routes/products.js` – Router module containing all product-related routes.
 - `models/product.js` – Mongoose schema and model definition.
 - `seeds.js` – Script to seed the database with sample products.
 - `views/products/index.ejs` – Displays the list of products.
