@@ -107,10 +107,19 @@ The app will be available at [http://localhost:3000/products](http://localhost:3
 
 --- 
 
-## Feedback ⭐️
+## Contributing
+
+Contributions, issues, and suggestions are welcome!  
+Please read the [Contributing Guidelines](./CONTRIBUTING.md) before making changes.
+
+---
+
+## Feedback
+
 If you like this project, consider starring the repo to show your support!
 
 ---
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
