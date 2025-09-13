@@ -33,7 +33,6 @@ router.get('/new', wrapAsync((req, res) => {
 router.post('/', wrapAsync(async (req, res) => {
     const newProduct = new Product(req.body);
     await newProduct.save();
-    console.log(newProduct);
     res.redirect(`/products/${newProduct._id}`);
 }));
 
@@ -41,7 +40,6 @@ router.post('/', wrapAsync(async (req, res) => {
 router.get('/:id', validateObjectId, wrapAsync(async (req, res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
-    console.log(product);
     if (!product) {
         throw new AppError('Product Not Found', 404);
     }
@@ -69,7 +67,6 @@ router.delete('/:id', validateObjectId, wrapAsync(async (req, res) => {
     if (!deletedProduct){
         throw new AppError('Cannot delete: Product not found', 404);
     }
-    console.log(`Product Deleted: ${deletedProduct}`)
     res.redirect('/products');
 }));
 
