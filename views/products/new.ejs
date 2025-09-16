@@ -10,6 +10,13 @@
             </div>
 
             <div class="mb-3">
+                <label for="description" class="form-label">Product Description:</label>
+                <input type="text" class="form-control" name="description" id="description" placeholder="Enter product description"
+                    value="<%= product ? product.description : '' %>">
+            </div>
+
+
+            <div class="mb-3">
                 <label for="price" class="form-label">Product Price:</label>
                 <input type="number" class="form-control" name="price" id="price" placeholder="Price">
             </div>
