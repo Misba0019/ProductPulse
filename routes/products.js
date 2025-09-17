@@ -26,7 +26,7 @@ router.get('/', wrapAsync(async (req, res) => {
 
 // Show form to create a new product
 router.get('/new', wrapAsync((req, res) => {
-    res.render('products/new', { categories });
+    res.render('products/new', { categories, product: null });
 }));
 
 // Create a new product
