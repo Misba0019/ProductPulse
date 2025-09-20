@@ -8,7 +8,7 @@ A full-stack, catalog-style CRUD application for managing and browsing products 
 
 - View all products in a table
 - Filter products by category
-- Add new products
+- Add new products (with name, price, image, category, and description)  
 - Edit existing products
 - Delete products
 - Product details page now shows **creation and last updated timestamps**
