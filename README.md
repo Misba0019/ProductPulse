@@ -80,11 +80,15 @@ To populate your database with sample products, run:
 ```bash
 node seeds.js
 ```
+> This will clear any existing products and insert fresh seed data.
 
 ### 4. Start the Server
 ```bash
 nodemon index.js
 ```
+> If you don’t have nodemon installed globally, you can install it with `npm install -g nodemon`,
+or simply run `node index.js` instead.
+> To stop the server, press Ctrl + C in the terminal.
 
 The app will be available at [http://localhost:3000/products](http://localhost:3000/products).
 
