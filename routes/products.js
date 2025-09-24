@@ -41,7 +41,7 @@ router.get('/:id', validateObjectId, wrapAsync(async (req, res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
     if (!product) {
-        throw new AppError('Product Not Found', 404);
+        throw new AppError("Sorry, we couldn't find  that product", 404);
     }
     let createdAt = "N/A";
     if (product.createdAt) {
@@ -65,7 +65,7 @@ router.delete('/:id', validateObjectId, wrapAsync(async (req, res) => {
     const { id } = req.params;
     const deletedProduct = await Product.findByIdAndDelete(id);
     if (!deletedProduct){
-        throw new AppError('Cannot delete: Product not found', 404);
+        throw new AppError("This product no longer exists, so it cannot be deleted.", 404);
     }
     res.redirect('/products');
 }));
@@ -75,7 +75,7 @@ router.get('/:id/edit', validateObjectId, wrapAsync(async (req, res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
     if(!product){
-        throw new AppError('Cannot edit: Product not found', 404);
+        throw new AppError("Sorry, we couldn't find that product.", 404);
     }
     res.render('products/edit', { product, categories });
 }));
@@ -85,7 +85,7 @@ router.put('/:id', validateObjectId, wrapAsync(async (req, res) => {
     const { id } = req.params;
     const product = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true});
     if (!product){
-        throw new AppError('Cannot update: Product not found', 404);
+        throw new AppError("This product no longer exists, so it cannot be updated.", 404);
     }
     res.redirect(`/products/${product._id}`);
 }));

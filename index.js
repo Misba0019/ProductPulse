@@ -37,12 +37,12 @@ app.use((err, req, res, next) => {
         for (let key in err.errors) {
             messages += `${err.errors[key].message} `;
         }
-        err.msg = 'Validation Error: ' + messages;
+        err.message = 'Validation Error: ' + messages;
     }
 
     // Default error handling
     const status = err.status || 500;
-    const message = err.msg || 'Something went wrong';
+    const message = err.message || 'Something went wrong';
 
     res.status(status).render('error', {status, message});
 });
