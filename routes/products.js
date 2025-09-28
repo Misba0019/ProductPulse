@@ -19,7 +19,7 @@ router.get('/', wrapAsync(async (req, res) => {
         const products = await Product.find({ category });
         res.render('products/index', { products, category });
     } else {
-        const products = await Product.find({})
+        const products = await Product.find({});
         res.render('products/index', { products, category: 'All' });
     }
 }));
@@ -41,7 +41,7 @@ router.get('/:id', validateObjectId, wrapAsync(async (req, res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
     if (!product) {
-        throw new AppError("Sorry, we couldn't find  that product", 404);
+        throw new AppError("Sorry, we couldn't find that product", 404);
     }
     let createdAt = "N/A";
     if (product.createdAt) {
