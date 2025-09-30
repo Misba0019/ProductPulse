@@ -21,6 +21,12 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
+// Redirect root to /products
+app.get('/', (req, res) => {
+    res.redirect('/products');
+});
+
+// Use product routes
 app.use('/products', productRoutes);
 
 // Handle 404 errors for undefined routes
