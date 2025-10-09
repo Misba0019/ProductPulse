@@ -9,6 +9,8 @@
         <tr>
             <th> Name </th>
             <th> Price </th>
+            <th> Added </th>
+            <th> Updated </th>
         </tr>
     </thead>
 
@@ -20,7 +22,15 @@
                     </a>
                     <span class="badge bg-success ms-2 text-capitalize"><%= product.category %></span>
                 </td>
-                <td><%= product.price.toFixed(2) %></td>
+                <td><%= product.price.toFixed(2) %>
+                <td>
+                    <%= product.createdAt ? new Date(product.createdAt).toLocaleString('en-IN', { dateStyle: 'medium' ,
+                        timeStyle: 'short' }) : 'N/A' %>
+                </td>
+                <td>
+                    <%= product.updatedAt ? new Date(product.updatedAt).toLocaleString('en-IN', { dateStyle: 'medium' ,
+                        timeStyle: 'short' }) : 'N/A' %>
+                </td>
             </tr>
         <% } %>
     </tbody>
